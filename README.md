@@ -14,14 +14,18 @@
 
 ## 과제 결과물
 
-### 프로젝트2 - 품질 요소 분석
+### 과제1 - 품질 요소 분석
 
-* 위치: [doc/project2_quality.md](doc/project2_quality.md)
+* 위치: [doc/project_quality.md](doc/project_quality.md)
 * 설명: 요구사항을 기반으로 시스템의 주요 품질 요소를 분석한 문서
 
-### 프로젝트3 - 프로젝트 정의서 작성
-* 위치: [doc/project3_projectplan.md](doc/project3_projectplan.md)
-* 설명: 프로젝트 개요, 개발 계획, 일정, 품질관리 등을 포함한 문서 
+### 과제2 - 프로젝트 관리 계획서 
+* 위치: [doc/project_projectplan.md](doc/project_projectplan.md)
+* 설명: 프로젝트 개요, 개발 계획, 일정, 품질관리 등을 포함한 문서
+
+### 과제3 - 요구사항 정의서 
+* 위치: [doc/project_requirements.md](doc/project_requirements.md)
+* 설명: 기능적/비기능적/인터페이스 요구사항을 정의한 문서
 
 ## 빌드 방법 (추후 작성 예정)
 현재는 설계 및 품질 분석 단계이며, 구현 이후 빌드 및 실행 방법을 추가할 예정입니다.
