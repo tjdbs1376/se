@@ -49,7 +49,7 @@
 | :--- | :--- |
 | 요구사항 분석 | Customer Requirement Document 기반 분석서 작성 |
 | Sprint | 1~4주 단위의 반복적인 기능 개발 및 피드백 |
-| Scrum Meeting | Daily Scrum, Sprint Planning, Review, Retrospective 등 반복 수행
+| Scrum Meeting | Daily Scrum, Sprint Planning, Sprint Review, Retrospective 등을 각 Sprint마다 반복 수행 |
 
 ## 2.4 개발 일정
 | 활동                            |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  10 |  11 |  12 |
@@ -63,7 +63,7 @@
 | 시스템 통합 및 테스트                  |     |     |     |     |     |     |     |     |     |     |  ■  |     |
 | 프로젝트 종료 및 최종 배포               |     |     |     |     |     |     |     |     |     |     |     |  ■  |
 
-- 각 Sprint 기간 동안 Daily Scrum, Sprint Planning, Sprint Review 및 Retrospective를 반복 수행
+- 각 Sprint 기간 동안 Daily Scrum, Sprint Planning, Sprint Review 및 Retrospective를 반복 수행하여 SCRUM 기반 개발 프로세스를 반영한다.
 ---
 
 # 3. 팀 구성
@@ -139,6 +139,7 @@ PM을 중심으로 전체 방향성을 관리하는 중앙집중형 요소와,
 | :--- | :---: | :---: | :--- |
 | 1 | 데이터 유출 | High | 전송 암호화 및 권한 기반 접근 제어 강화 |
 | 2 | 동시 접속 부하 | Medium | 분산 서버 구성 및 검색 속도 최적화 |
+| 3 | 서버 장애 및 서비스 중단 | Medium | 백업 시스템 구축 및 장애 대응 매뉴얼 마련 |
 
 ---
 
