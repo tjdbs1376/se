@@ -39,8 +39,8 @@
 
 ## 1.4 참조 문서
 
-* Customer Requirement Document (v0.1)
-* 샘플 요구사항 정의서 (Open CCTV)
+* [미니드라이브]CustomerRequirementDocument_260503_v0.1
+* [샘플]요구사항정의서_OpenCCTV_v1.0
 
 ---
 
@@ -133,5 +133,5 @@
 
 # 4. 참고문헌 및 부록
 
-* Customer Requirement Document v0.1
-* 요구사항 정의서 샘플 문서
+* [미니드라이브]CustomerRequirementDocument_260503_v0.1
+* [샘플]요구사항정의서_OpenCCTV_v1.0
