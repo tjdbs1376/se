@@ -27,6 +27,10 @@
 * 위치: [doc/project_requirements.md](doc/project_requirements.md)
 * 설명: 기능적/비기능적/인터페이스 요구사항을 정의한 문서
 
+### 과제4 - 요구사항 분석서 
+* 위치: [doc/project_requirement_analysis.md](doc/project_requirement_analysis.md)
+* 설명: 유스케이스, 클래스, 순차 다이어그램을 통해 시스템의 기능·구조·행위를 객체지향 관점에서 분석한 문서
+
 ## 빌드 방법 (추후 작성 예정)
 현재는 설계 및 품질 분석 단계이며, 구현 이후 빌드 및 실행 방법을 추가할 예정입니다.
 
