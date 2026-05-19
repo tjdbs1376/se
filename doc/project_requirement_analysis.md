@@ -144,14 +144,14 @@ classDiagram
 * **Class Name**: FileEntity (ID: 02, Type: Concrete)
 * **Description**: 파일의 메타데이터 및 물리적 저장 상태를 관리한다.
 * **Responsibilities**: 메타데이터 저장, 휴지통 이동, 버전 복구.
-* **Collaborators**: Database, Version Manager, ShareLink.
+* **Collaborators**: User, StorageManager, AuthService.
 
 
 * **후면부 (Back)**:
 
 
 * **Attributes**: fileId, fileName, size, version.
-* **Relationships**: User (Owned by), ShareLink (Associated).
+* **Relationships**: User (Owned by), StorageManager (Associated).
 
 
 
@@ -199,12 +199,12 @@ sequenceDiagram
 
 ```mermaid
 stateDiagram-v2
-    [*] --> 가용상태: 업로드 완료
-    가용상태 --> 휴지통: 삭제 요청 (moveToTrash)
-    휴지통 --> 가용상태: 복구 요청 (restore)
-    휴지통 --> [*]: 30일 경과 (영구 삭제)
-    가용상태 --> 점검중: 무결성 체크 이벤트 발생
-    점검중 --> 가용상태: 체크 완료
+    [*] --> 업로드됨: 업로드 완료
+    업로드됨 --> 휴지통보관: 삭제 요청 (moveToTrash)
+    휴지통보관 --> 업로드됨: 복구 요청 (restore)
+    휴지통보관 --> [*]: 30일 경과 (영구 삭제)
+    업로드됨 --> 무결성검사중: 무결성 체크 이벤트 발생
+    무결성검사중 --> 업로드됨: 체크 완료
 
 ```
 
