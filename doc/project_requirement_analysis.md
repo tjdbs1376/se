@@ -78,6 +78,18 @@ flowchart LR
 | **정상 시나리오** | 1. 사용자는 업로드할 파일을 선택하고 전송 버튼을 클릭한다.<br>2. 시스템은 로그인 세션 및 접근 권한을 확인한다.<br>3. 시스템은 잔여 저장 용량을 검사한다.<br>4. 시스템은 파일 확장자와 크기를 검사한다.<br>5. 시스템은 파일을 저장하고 메타데이터를 DB에 기록한다.<br>6. 시스템은 업로드 완료 메시지를 출력한다. |
 | **예외 처리** | • 용량 부족 시: 저장 공간 부족 메시지를 출력하고 업로드를 중단한다.<br>• 차단 확장자 발견 시: 업로드 불가 파일 형식 메시지를 출력한다. |                                                                                                 |
 
+
+
+### 2.3 유스케이스 설명서: 파일 공유하기
+
+| 항목 | 상세 내용 |
+|---|---|
+| **ID / 이름** | UC-005 / 파일 공유하기 (File Sharing) |
+| **주요 액터** | 내부 사용자 |
+| **사전 조건 (Precondition)** | 사용자는 로그인된 상태여야 하며 공유 권한을 가지고 있어야 한다. |
+| **정상 시나리오** | 1. 사용자는 공유할 파일을 선택한다.<br>2. 시스템은 사용자 권한을 확인한다.<br>3. 사용자는 공유 대상 또는 링크 권한을 설정한다.<br>4. 시스템은 공유 링크 및 접근 권한 정보를 생성한다.<br>5. 시스템은 공유 완료 메시지를 출력한다. |
+| **예외 처리** | • 권한이 없는 경우: 공유 불가 메시지를 출력한다.<br>• 존재하지 않는 사용자 지정 시: 대상 사용자 오류 메시지를 출력한다. |
+
 ---
 
 ## 3. 구조 모델링 (Structural Modeling)
@@ -141,17 +153,16 @@ classDiagram
 * **전면부 (Front)**:
 
 
-* **Class Name**: FileEntity (ID: 02, Type: Concrete)
-* **Description**: 파일의 메타데이터 및 물리적 저장 상태를 관리한다.
-* **Responsibilities**: 메타데이터 저장, 휴지통 이동, 버전 복구.
-* **Collaborators**: User, StorageManager, AuthService.
+    * **Class Name**: FileEntity (ID: 02, Type: Concrete)
+    * **Description**: 파일의 메타데이터 및 물리적 저장 상태를 관리한다.
+    * **Responsibilities**: 메타데이터 저장, 휴지통 이동, 버전 복구.
+    * **Collaborators**: User, StorageManager, AuthService.
 
 
 * **후면부 (Back)**:
 
-
-* **Attributes**: fileId, fileName, size, version.
-* **Relationships**: User (Owned by), StorageManager (Associated).
+    * **Attributes**: fileId, fileName, size, version.
+    * **Relationships**: User (Owned by), StorageManager (Associated).
 
 
 
@@ -182,6 +193,11 @@ sequenceDiagram
     Note over Ctrl: 용량 및 확장자 체크 (FR-003)
     Ctrl->>Ctrl: checkValidity()
 
+    alt 유효하지 않은 파일인 경우
+    Ctrl-->>UI: 업로드 실패 메시지 전송
+    UI-->>User: 오류 메시지 표시
+
+else 정상 파일인 경우
     Ctrl->>Storage: saveFile(data)
     Storage-->>Ctrl: success (path 반환)
 
@@ -190,6 +206,7 @@ sequenceDiagram
 
     Ctrl-->>UI: 업로드 완료 메시지 전송
     UI-->>User: 결과 화면 표시
+end
 
 ```
 
